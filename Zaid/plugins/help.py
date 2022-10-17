@@ -18,9 +18,18 @@ async def help(event):
     if Config.MANAGEMENT_MODE == "ENABLE":
         return
     if event.is_group:
-       await event.reply("Contact me in PM to get available help menu!", buttons=[
-       [Button.url("Help And Commands!", "t.me/{}?start=help".format(BOT_USERNAME))]])
-       return
+        await event.reply(
+            "Contact me in PM to get available help menu!",
+            buttons=[
+                [
+                    Button.url(
+                        "Help And Commands!", f"t.me/{BOT_USERNAME}?start=help"
+                    )
+                ]
+            ],
+        )
+
+        return
 
     await event.reply(HELP_TEXT, buttons=btn)
 
